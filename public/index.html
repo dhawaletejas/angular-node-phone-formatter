@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html ng-app="phoneNumberFormat">
+<head>
+    <meta charset="utf-8">
+
+    <title>Phone Formatter Angular App</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controller.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/directive.js"></script>
+
+</head>
+<body ng-controller="mainController">
+<div class="container">
+<section class="content">
+        <form action="">
+            <h1>Phone Formatter A</h1>
+            <div>
+                <input type="text" ng-model="phoneInput" ng-change="formatPhone()" placeholder="Phone Number"/>
+            </div>
+            <div>
+                <input type="text" ng-value="phoneFormatted"  placeholder="Formatted Phone Number" ng-disabled="true"/>
+            </div>
+            <div id="phoneDetails" class="alert alert-info" ng-class="alertClass" role="alert">
+                <table><tr><td>Validity:</td><td>{{phoneValid}}</td></tr>
+                    <tr><td>National Format:</td><td>{{phoneNational}}</td></tr></table>
+            </div>
+        </form>
+
+    </section>
+    <section class="content">
+        <form action="">
+            <h1>Phone Formatter B</h1>
+            <div phone-field>
+            </div>
+        </form>
+    </section>
+</div>
+</body>
+</html>
